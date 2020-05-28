@@ -1,0 +1,17 @@
+#!/bin/bash
+# Resolve to /opt/bin/deno
+export PATH=/opt/bin:$PATH
+
+# Handler format: <script_name>.<bash_function_name>
+#
+# The script file <script_name>.sh  must be located at the root of your
+# function's deployment package, alongside this bootstrap executable.
+
+# Split filename and function name using '.'
+# 0 => File name, 1 => Func name (not used)
+IFS="." read -ra FN <<< "$_HANDLER"
+
+# Cached files will be saved to DENO_DIR
+[ -z "$DENO_DIR" ] && export DENO_DIR=/tmp/deno_dir
+[ -z "$NO_COLOR" ] && export NO_COLOR=true
+deno run --allow-read --allow-net --allow-env "${FN[0]}.ts"
