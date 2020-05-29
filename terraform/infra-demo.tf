@@ -148,3 +148,13 @@ resource "aws_lambda_permission" "deno" {
   # /*/*/* = Any stage / any method / any path
   source_arn    = "${aws_apigatewayv2_api.deno.execution_arn}/*/*/words"
 }
+
+locals {
+  api_path = split(" ", aws_apigatewayv2_route.deno.route_key)
+}
+
+output "deno_api" {
+  value = {
+    end_point = "POST ${aws_apigatewayv2_api.deno.api_endpoint}${local.api_path[1]}"
+  }
+}
