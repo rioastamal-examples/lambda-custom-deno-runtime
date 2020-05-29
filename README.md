@@ -4,7 +4,7 @@ Repository ini berisi script untuk membangun custom runtime untuk Deno pada AWS 
 
 Untuk panduan lengkap silahkan merujuk pada artikel TeknoCerdas.com berikut.
 
-- [Tutorial Serverless: Membuat AWS Lambda Custom Runtime untuk Deno](https://teknocerdas.com/programming/tutorial-serverless-membuat-aws-lambda-custom-runtime-untuk-deno)
+- [Tutorial Serverless: Membuat AWS Lambda Custom Runtime untuk Deno](https://teknocerdas.com/programming/tutorial-serverless-membuat-deno-runtime-untuk-aws-lambda/)
 
 ## How to Run
 
@@ -20,6 +20,15 @@ Lakukan inisialisasi dan apply untuk membuat semua resources.
 ```
 $ terraform init
 $ terraform apply
+
+...
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+deno_api = {
+  "end_point" = "POST https://RANDOM.execute-api.us-east-1.amazonaws.com/words"
+}
 ```
 
 ## License
