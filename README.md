@@ -10,7 +10,6 @@ Untuk panduan lengkap silahkan merujuk pada artikel TeknoCerdas.com berikut.
 
 Pastikan anda memiliki AWS account dengan privilege Administrator agar tidak terjadi masalah ketika menjalankan Terraform.
 
-
 ```
 $ export AWS_PROFILE=YOUR_PROFILE AWS_DEFAULT_REGION=YOUR_REGION
 ```
@@ -18,6 +17,7 @@ $ export AWS_PROFILE=YOUR_PROFILE AWS_DEFAULT_REGION=YOUR_REGION
 Lakukan inisialisasi dan apply untuk membuat semua resources.
 
 ```
+$ bash build.sh
 $ terraform init
 $ terraform apply
 
